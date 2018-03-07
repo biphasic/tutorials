@@ -1,15 +1,15 @@
 import QtQuick 2.3
 import QtQuick.Layouts 1.1
 import BackgroundCleaner 1.0
-import ChangeDetectionDisplay 1.0
+//import ChangeDetectionDisplay 1.0
 import LogarithmicDisplay 1.0
 import FrameGenerator 1.0
 
 Item {
     id: item
     visible: true
-    width: 304 * 2 + 10 * 3
-    height: 240 + 10 * 2
+    width: 304
+    height: 240
 
     Timer {
         interval: 20
@@ -17,7 +17,7 @@ Item {
         repeat: true
         onTriggered: {
             backgroundCleaner.triggerDraw();
-            changeDetectionDisplay.triggerDraw();
+            //changeDetectionDisplay.triggerDraw();
             logarithmicDisplay.triggerDraw();
             frameGenerator.triggerDraw();
         }
@@ -37,13 +37,14 @@ Item {
     }
 
     RowLayout {
-        anchors.rightMargin: 10
-        anchors.leftMargin: 10
-        anchors.bottomMargin: 10
-        anchors.topMargin: 10
+        anchors.rightMargin: 0
+        anchors.leftMargin: 0
+        anchors.bottomMargin: 0
+        anchors.topMargin: 0
         anchors.fill: parent
-        spacing: 10
+        spacing: 0
 
+        /*
         ChangeDetectionDisplay {
             objectName: "changeDetectionDisplay"
             id: changeDetectionDisplay
@@ -52,6 +53,7 @@ Item {
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
             canvasSize: "304x240"
         }
+        */
 
         LogarithmicDisplay {
             objectName: "logarithmicDisplay"
